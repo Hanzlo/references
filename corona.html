@@ -2,23 +2,49 @@
 <html>
 
 <head>
-    <title>Leaflet GeoJSON Example</title>
+    <title>Corona virus spread, countries map, health, outbreak.</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <style type="text/css">
         .leaflet-container {
             background-color: #c5e8ff;
         }
+
     </style>
     <style>
         html,
         body {
+            font-family: 'Open Sans', sans-serif;
             height: 100%;
             margin: 0;
         }
-
+        .corona-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 99999;
+            display: block;
+            font-size: 2rem;
+            padding: 15px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.76);
+            margin-bottom: 0;
+        }
+        .deaths-recovered {
+            position: absolute;
+            left: 0;
+            top: -3.6rem;
+            z-index: 99999;
+            display: block;
+            font-size: 1rem;
+            padding: 15px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.76);
+            margin-bottom: 0;
+        }
         #map {
             width: 600px;
             height: 400px;
@@ -62,6 +88,10 @@
 </head>
 
 <body>
+    <h1 class="corona-title">
+        Corona Virus Live Outbreak - Map Tracker 
+        <span class="deaths-recovered">Deaths: 212 - Recovered: 224 </span>
+    </h1>
     <div id="map"></div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
@@ -111,6 +141,7 @@
                 d > 500 ? '#FD8D3C' :
                 d > 100 ? '#FEB24C' :
                 d > 10 ? '#FED976' :
+                d > 0 ? '#FED976' :
                 '#f6fcd680';
         }
 
@@ -179,23 +210,12 @@
                 onEachFeature: onEachFeature
             }).addTo(map);
 
-
             var geojson = L.geoJson(statesData, {
                 clickable: true,
                 style: style,
                 onEachFeature: onEachFeature
             }).addTo(map);
 
-            var geojson = L.geoJson(chinaDataBig, {
-                clickable: true,
-                style: style,
-                onEachFeature: onEachFeature
-            }).addTo(map);
-            var geojson = L.geoJson(russiaDataBig, {
-                clickable: true,
-                style: style,
-                onEachFeature: onEachFeature
-            }).addTo(map);
             map.attributionControl.addAttribution(
                 'Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
@@ -206,7 +226,7 @@
             legend.onAdd = function (map) {
 
                 var div = L.DomUtil.create('div', 'info legend'),
-                    grades = [10, 100, 500, 1000, 10000, 50000, 100000, 1000000],
+                    grades = [10, 50, 100, 300, 500, 1000, 10000, 50000],
                     labels = [],
                     from, to;
 

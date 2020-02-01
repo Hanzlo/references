@@ -1341,7 +1341,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 221,
             "id": "50",
             "name": "重庆",
             "latitude": 30.0173,
@@ -1889,7 +1889,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 212,
             "id": "34",
             "name": "安徽",
             "latitude": 31.9537,
@@ -2100,7 +2100,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 461,
             "id": "44",
             "name": "广东",
             "latitude": 23.7924,
@@ -4215,7 +4215,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 5820,
             "id": "42",
             "name": "湖北",
             "latitude": 30.9857,
@@ -4449,7 +4449,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 341,
             "id": "43",
             "name": "湖南",
             "latitude": 27.6667,
@@ -5798,7 +5798,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 355,
             "id": "41",
             "name": "河南",
             "latitude": 33.9055,
@@ -6571,7 +6571,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 246,
             "id": "36",
             "name": "江西",
             "latitude": 27.6397,
@@ -7057,7 +7057,7 @@ var chinaDataBig = {
     }, {
         "type": "Feature",
         "properties": {
-            "infected": 0,
+            "infected": 542,
             "id": "33",
             "name": "浙江",
             "latitude": 29.1084,
